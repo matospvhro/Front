@@ -97,6 +97,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Produto.cs" />
+    <Compile Include="Models\Produtos_Categorias.cs" />
+    <Compile Include="Models\Produtos_Descricoes.cs" />
+    <Compile Include="Models\Produtos_Familias.cs" />
+    <Compile Include="Models\Produto_Estoque.cs" />
+    <Compile Include="Models\Produto_Preco.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -112,7 +118,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
     <Folder Include="Repository\" />
   </ItemGroup>
   <PropertyGroup>
