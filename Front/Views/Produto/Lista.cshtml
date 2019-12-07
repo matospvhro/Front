@@ -1,0 +1,207 @@
+﻿@model IEnumerable<Front.Models.Produto>
+
+@{
+    ViewBag.Title = "Lista";
+}
+
+<h2>Lista</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_EMPRESA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Produtos_Descricoes.DESCRICAO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_PRODUTO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_FABRICANTE_FORNECEDOR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CODIGO_BARRAS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CODIGO_FABRICANTE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_GRUPO_PRODUTOS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_SUB_GRUPO_PRODUTOS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CLASSIFICACAO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TIPO_UNIDADE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QUANT_UNITARIA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UNIDADE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FRACAO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.COMPOSTO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USO_CONTINUO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OBSERVACOES)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_CATEGORIA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SITUACAO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_GRADE_PRODUTOS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CAMPOS_USUARIO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_FILIAL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DATA_CADASTRO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DESCRICAO_WEB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ENVIA_WEB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PESO_BRUTO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PESO_LIQUIDO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_FLUXO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TEMPO_EXECUCAO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LIMITE_EXECUCAO_SIMULTANEA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QUANT_MIN_VENDA)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.ID_EMPRESA)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Produtos_Descricoes.DESCRICAO)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ID_PRODUTO)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ID_FABRICANTE_FORNECEDOR)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CODIGO_BARRAS)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CODIGO_FABRICANTE)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ID_GRUPO_PRODUTOS)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ID_SUB_GRUPO_PRODUTOS)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CLASSIFICACAO)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TIPO_UNIDADE)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.QUANT_UNITARIA)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.UNIDADE)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.FRACAO)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.COMPOSTO)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.USO_CONTINUO)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.OBSERVACOES)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ID_CATEGORIA)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SITUACAO)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ID_GRADE_PRODUTOS)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CAMPOS_USUARIO)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ID_FILIAL)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DATA_CADASTRO)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DESCRICAO_WEB)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ENVIA_WEB)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PESO_BRUTO)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PESO_LIQUIDO)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ID_FLUXO)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TEMPO_EXECUCAO)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.LIMITE_EXECUCAO_SIMULTANEA)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.QUANT_MIN_VENDA)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+    </td>
+</tr>
+}
+
+</table>

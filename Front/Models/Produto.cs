@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Front.Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -36,5 +37,10 @@ namespace Front.Models
         public int TEMPO_EXECUCAO { get; set; }
         public int LIMITE_EXECUCAO_SIMULTANEA { get; set; }
         public int QUANT_MIN_VENDA { get; set; }
+        public Produtos_Descricoes Produtos_Descricoes { get; set; }
+        public IList<Produto> ListaDeProdutos()
+        {
+            return new AcessoFB().ListaProdutos();
+        }
     }
 }
