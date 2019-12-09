@@ -98,12 +98,39 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Css\bootstrap.css" />
+    <Content Include="Css\component.css" />
+    <Content Include="Css\etalage.css" />
+    <Content Include="Css\form.css" />
+    <Content Include="Css\megamenu.css" />
+    <Content Include="Css\normalize.css" />
+    <Content Include="Css\style.css" />
+    <Content Include="Exemplo\about.html" />
+    <Content Include="Exemplo\blog-single.html" />
+    <Content Include="Exemplo\blog.html" />
+    <Content Include="Exemplo\cart.html" />
+    <Content Include="Exemplo\contact.html" />
+    <Content Include="Exemplo\index.html" />
+    <Content Include="Exemplo\login.html" />
+    <Content Include="Exemplo\men.html" />
+    <Content Include="Exemplo\products.html" />
+    <Content Include="Exemplo\registration.html" />
+    <Content Include="Exemplo\shop.html" />
+    <Content Include="Exemplo\single.html" />
+    <Content Include="Exemplo\w3layouts-License.txt" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Js\easyResponsiveTabs.js" />
+    <Content Include="Js\jquery.easydropdown.js" />
+    <Content Include="Js\jquery.etalage.min.js" />
+    <Content Include="Js\jquery.min.js" />
+    <Content Include="Js\megamenu.js" />
+    <Content Include="Js\modernizr.custom.js" />
+    <Content Include="Js\simpleCart.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -118,6 +145,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProdutoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -138,6 +166,8 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Produto\Lista.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Shared\_Layout_New.cshtml" />
+    <Content Include="Views\Home\Home.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
