@@ -23,7 +23,7 @@ namespace Front.Repository
         public FbConnection GetConexao()
         {
             string conn = ConfigurationManager.ConnectionStrings["FireBirdConnectionString"].ToString();
-            var conexao = "Sever=" + "127.0.0.1" + conn + "Database=" + "c:\\fdb\\dm.fdb";
+            var conexao =  conn;
             return new FbConnection(conexao);
         }
 
@@ -53,7 +53,7 @@ namespace Front.Repository
                 try
                 {
                     conexaoFireBird.Open();
-                    string mSQL = "select * from produto";
+                    string mSQL = "select * from  produtos p where p.envia_web = 1";
                     FbCommand cmd = new FbCommand(mSQL, conexaoFireBird);
 
                     FbDataReader dr = cmd.ExecuteReader();
@@ -61,8 +61,11 @@ namespace Front.Repository
                     while (dr.Read())
                     {
                         Produto p = new Produto();
-                        p.ID_PRODUTO = (int)dr["ID_PRODUTO"];
+                        p.ID_PRODUTO = (string)dr["ID_PRODUTO"];
+                        p.CODIGO_FABRICANTE = (string)dr["CODIGO_FABRICANTE"];
                         p.Produtos_Descricoes = new AcessoFB().BuscarProdutoDescricoesPorId(p.ID_PRODUTO);
+                        p.Produto_Estoque = new AcessoFB().BuscarProdutoEstoquePorId(p.ID_PRODUTO);
+                        p.Produto_Preco = new AcessoFB().BuscarProdutoPorPrecoPorId(p.ID_PRODUTO);
                         lista.Add(p);
                     }
                     return lista;
@@ -79,7 +82,72 @@ namespace Front.Repository
             }
         }
 
-        private Produtos_Descricoes BuscarProdutoDescricoesPorId(int iD_PRODUTO)
+        public Produto_Preco BuscarProdutoPorPrecoPorId(string iD_PRODUTO)
+        {
+            using (FbConnection conexaoFireBird = AcessoFB.GetInstancia().GetConexao())
+            {
+                try
+                {
+                    conexaoFireBird.Open();
+                    string mSQL = "select * from produtos_precos p where p.id_Produto = @Id";
+                    FbCommand cmd = new FbCommand(mSQL, conexaoFireBird);
+                    cmd.Parameters.AddWithValue("@id", iD_PRODUTO);
+                    FbDataReader dr = cmd.ExecuteReader();
+                    Produto_Preco p = new Produto_Preco();
+                    if (dr.Read() != false)
+                    {
+                        p.PRECO_VENDA = (double)dr["PRECO_VENDA"];
+                    }
+                    else
+                    {
+                        p.PRECO_VENDA = 0;
+                    }
+
+                    return p;
+                }
+
+                catch (FbException fbex)
+                {
+                    throw fbex;
+                }
+                finally
+                {
+                    conexaoFireBird.Close();
+                }
+            }
+        }
+
+        public Produto_Estoque BuscarProdutoEstoquePorId(string iD_PRODUTO)
+        {
+            using (FbConnection conexaoFireBird = AcessoFB.GetInstancia().GetConexao())
+            {
+                try
+                {
+                    conexaoFireBird.Open();
+                    string mSQL = "select * from produtos_estoques p where p.id_Produto = @Id";
+                    FbCommand cmd = new FbCommand(mSQL, conexaoFireBird);
+                    cmd.Parameters.AddWithValue("@id", iD_PRODUTO);
+                    FbDataReader dr = cmd.ExecuteReader();
+                    dr.Read();
+
+                    Produto_Estoque p = new Produto_Estoque();
+                    p.ESTOQUE_INTEIRO = (double)dr["ESTOQUE_INTEIRO"];
+
+                    return p;
+                }
+
+                catch (FbException fbex)
+                {
+                    throw fbex;
+                }
+                finally
+                {
+                    conexaoFireBird.Close();
+                }
+            }
+        }
+
+        private Produtos_Descricoes BuscarProdutoDescricoesPorId(string iD_PRODUTO)
         {
             using (FbConnection conexaoFireBird = AcessoFB.GetInstancia().GetConexao())
             {
@@ -93,7 +161,7 @@ namespace Front.Repository
                     dr.Read();
 
                     Produtos_Descricoes p = new Produtos_Descricoes();
-                    p.ID_PRODUTO = (string)dr["DESCRICAO"];
+                    p.DESCRICAO = (string)dr["DESCRICAO"];
 
                     return p;
                 }

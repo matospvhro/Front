@@ -9,7 +9,7 @@ namespace Front.Models
     public class Produto
     {
         public int ID_EMPRESA { get; set; }
-        public int ID_PRODUTO { get; set; }
+        public string ID_PRODUTO { get; set; }
         public int ID_FABRICANTE_FORNECEDOR { get; set; }
         public string CODIGO_BARRAS { get; set; }
         public string CODIGO_FABRICANTE { get; set; }
@@ -38,6 +38,8 @@ namespace Front.Models
         public int LIMITE_EXECUCAO_SIMULTANEA { get; set; }
         public int QUANT_MIN_VENDA { get; set; }
         public Produtos_Descricoes Produtos_Descricoes { get; set; }
+        public Produto_Preco Produto_Preco { get; set; }
+        public Produto_Estoque Produto_Estoque { get; set; }
         public IList<Produto> ListaDeProdutos()
         {
             return new AcessoFB().ListaProdutos();
