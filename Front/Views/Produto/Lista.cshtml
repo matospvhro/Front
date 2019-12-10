@@ -5,56 +5,20 @@
     Layout = "~/Views/Shared/_Layout_New.cshtml";
 }
 
-<h2>Lista</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-
-        <th>
-            @Html.DisplayNameFor(model => model.Produtos_Descricoes.DESCRICAO)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ID_PRODUTO)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CODIGO_FABRICANTE)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Produto_Estoque.ESTOQUE_INTEIRO)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Produto_Preco.PRECO_VENDA)
-        </th>
-
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.Produtos_Descricoes.DESCRICAO)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.ID_PRODUTO)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.CODIGO_FABRICANTE)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Produto_Estoque.ESTOQUE_INTEIRO)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Produto_Preco.PRECO_VENDA)
-    </td>
-    <td>
-        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-    </td>
-</tr>
+@foreach (var item in Model)
+{
+    <div class="row1">
+        <div class="categoires">
+            <div class="container">
+                <a href="#">
+                    <div class="col-md-4 sections fashion-grid-a">
+                        <h6>@item.Produtos_Descricoes.DESCRICAO</h6>
+                        <h6>@item.CODIGO_FABRICANTE</h6>
+                        <h6>@item.Produto_Estoque.ESTOQUE_INTEIRO</h6>
+                        <h6>@item.Produto_Preco.PRECO_VENDA</h6>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
 }
-
-</table>

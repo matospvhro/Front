@@ -35,12 +35,12 @@ ol.breadcrumb li.active{
 }
 /*-----start-header----*/
 .header{
-   background:url(../images/banner33.jpg) no-repeat 0px 0px;
+   background:url(../images/banner3.jpg) no-repeat 0px 0px;
 	background-size:cover;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
-	min-height:720px;
+	min-height:420px;
 	position:relative;
 	
 }
@@ -186,9 +186,9 @@ i.arrow{
 }
 .fashion-grid-a {
 	background:url(../images/bg1.jpg) no-repeat;
-	width:32%;
+	width:22%;
 	margin-right:2%;
-	min-height: 210px;
+	min-height: 140px;
 }
 .fashion-grid-b {
 	background: url(../images/bg2.jpg) no-repeat;
@@ -593,9 +593,9 @@ i.boque{
 	color:#fff;
 	text-decoration:none;
 }
-.fotter-logo{
-background:#fa558f;
-padding:1.5em 0;
+.fotter-logo {
+	background: #040404;
+	padding: 1.5em 0;
 }
 .ftr-logo{
 float:left;
@@ -622,12 +622,12 @@ padding-top:1em;
 }
 /*--about--*/
 .header2{
-   background:url(../images/banner33.jpg) no-repeat 0px 0px;
+   background:url(../images/banner3.jpg) no-repeat 0px 0px;
 	background-size:cover;
 	-webkit-background-size: cover;
 -moz-background-size: cover;
 -o-background-size: cover;
-	min-height:250px;
+	min-height:150px;
 }
 .about {
 margin: 4em 0;
@@ -939,7 +939,7 @@ ul.place li {
 	cursor: pointer;
 }
 ul.place li span{
-	color: #f02b63;
+	color: #fff;
 }
 ul.place li.sort{
 	float:left;
@@ -3133,7 +3133,7 @@ ul.tabs-menu {
   padding: 7px 46px!important;
 }
 .fashion-grid-a ,.fashion-grid-b,.fashion-grid-c{
-  width: 31.4%;
+  width: 21.4%;
   margin: 0 4px;
 }
 .sections {
@@ -3385,7 +3385,7 @@ p.click {
   line-height: 17px;
 }
 .fashion-grid-a, .fashion-grid-b, .fashion-grid-c {
-  width: 30.4%;
+  width: 20.4%;
 }
 ul.tabs-menu {
   width: 70%;
@@ -3463,7 +3463,7 @@ ul.tabs-menu {
   min-height: 340px;
 }
 .fashion-grid-a, .fashion-grid-b, .fashion-grid-c {
-  width: 30.85%;
+  width: 20.85%;
 }
 .sections h4 {
   font-size: 1.1em;
@@ -3529,7 +3529,7 @@ ul.tabs-menu {
   top: 53%;
 }
 .fashion-grid-a, .fashion-grid-b, .fashion-grid-c {
-  width: 31%;
+  width: 21%;
   margin: 0 3px;
 }
 .item_add {
