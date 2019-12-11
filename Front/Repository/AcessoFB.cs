@@ -66,9 +66,46 @@ namespace Front.Repository
                         p.Produtos_Descricoes = new AcessoFB().BuscarProdutoDescricoesPorId(p.ID_PRODUTO);
                         p.Produto_Estoque = new AcessoFB().BuscarProdutoEstoquePorId(p.ID_PRODUTO);
                         p.Produto_Preco = new AcessoFB().BuscarProdutoPorPrecoPorId(p.ID_PRODUTO);
+                        p.Foto = new AcessoFB().BuscarFotoDoProduto(p.ID_PRODUTO);
+
                         lista.Add(p);
                     }
                     return lista;
+                }
+
+                catch (FbException fbex)
+                {
+                    throw fbex;
+                }
+                finally
+                {
+                    conexaoFireBird.Close();
+                }
+            }
+        }
+
+        private Foto BuscarFotoDoProduto(string iD_PRODUTO)
+        {
+            using (FbConnection conexaoFireBird = AcessoFB.GetInstancia().GetConexao())
+            {
+                try
+                {
+                    conexaoFireBird.Open();
+                    string mSQL = "select * from fotos p where p.id_Produto = @Id";
+                    FbCommand cmd = new FbCommand(mSQL, conexaoFireBird);
+                    cmd.Parameters.AddWithValue("@id", iD_PRODUTO);
+                    FbDataReader dr = cmd.ExecuteReader();
+                    Foto p = new Foto();
+                    if (dr.Read() != false)
+                    {
+                        p.FOTOGRAFIA = (byte[])dr["FOTOGRAFIA"];
+                    }
+                    else
+                    {
+                        p.FOTOGRAFIA = null;
+                    }
+
+                    return p;
                 }
 
                 catch (FbException fbex)

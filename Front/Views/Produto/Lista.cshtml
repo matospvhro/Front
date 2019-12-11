@@ -4,21 +4,42 @@
     ViewBag.Title = "Lista";
     Layout = "~/Views/Shared/_Layout_New.cshtml";
 }
+<div class="features" id="features">
+    <div class="container">
+        <div class="tabs-box">
+            <div class="clearfix"> </div>
+            <div class="tab-grids">
 
-@foreach (var item in Model)
-{
-    <div class="row1">
-        <div class="categoires">
-            <div class="container">
-                <a href="#">
-                    <div class="col-md-4 sections fashion-grid-a">
-                        <h6>@item.Produtos_Descricoes.DESCRICAO</h6>
-                        <h6>@item.CODIGO_FABRICANTE</h6>
-                        <h6>@item.Produto_Estoque.ESTOQUE_INTEIRO</h6>
-                        <h6>@item.Produto_Preco.PRECO_VENDA</h6>
+                @foreach (var item in Model)
+                {
+                    <div id="tab1" class="tab-grid1">
+                        <a href="single.html">
+                            <div class="product-grid">
+                                <div class="more-product-info"></div>
+                                <div class="product-img b-link-stripe b-animate-go  thickbox">
+                                    <img src="@item.Foto.FOTOGRAFIA" class="img-responsive" alt="" />
+                                    <div class="b-wrapper">
+                                        <h4 class="b-animate b-from-left  b-delay03">
+                                            <button class="btns">ORDER NOW</button>
+                                        </h4>
+                                    </div>
+                                </div>
+                        </a>
+                        <div class="product-info simpleCart_shelfItem">
+                            <div class="product-info-cust">
+                                <h4>@item.Produtos_Descricoes.DESCRICAO</h4>
+                                <h6>@item.CODIGO_FABRICANTE</h6>
+                                <span class="item_price">@item.Produto_Preco.PRECO_VENDA</span>
+                                <input type="text" class="item_quantity" value="1" />
+                                <input type="button" class="item_add" value="ADD">
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
                     </div>
-                </a>
+                }
+
             </div>
         </div>
     </div>
-}
+</div>
+

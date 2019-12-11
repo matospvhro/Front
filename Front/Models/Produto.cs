@@ -40,6 +40,7 @@ namespace Front.Models
         public Produtos_Descricoes Produtos_Descricoes { get; set; }
         public Produto_Preco Produto_Preco { get; set; }
         public Produto_Estoque Produto_Estoque { get; set; }
+        public Foto Foto { get; set; }
         public IList<Produto> ListaDeProdutos()
         {
             return new AcessoFB().ListaProdutos();
