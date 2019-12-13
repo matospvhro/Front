@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Web;
 
@@ -67,6 +69,12 @@ namespace Front.Repository
                         p.Produto_Estoque = new AcessoFB().BuscarProdutoEstoquePorId(p.ID_PRODUTO);
                         p.Produto_Preco = new AcessoFB().BuscarProdutoPorPrecoPorId(p.ID_PRODUTO);
                         p.Foto = new AcessoFB().BuscarFotoDoProduto(p.ID_PRODUTO);
+                        if (p.Foto.FOTOGRAFIA != null)
+                        {
+                            MemoryStream ms = new MemoryStream(p.Foto.FOTOGRAFIA);
+                            Image returnImage = Image.FromStream(ms);
+                            p.Imagem = returnImage;
+                        }
 
                         lista.Add(p);
                     }

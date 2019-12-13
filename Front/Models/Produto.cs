@@ -1,6 +1,7 @@
 ﻿using Front.Repository;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 
@@ -40,6 +41,7 @@ namespace Front.Models
         public Produtos_Descricoes Produtos_Descricoes { get; set; }
         public Produto_Preco Produto_Preco { get; set; }
         public Produto_Estoque Produto_Estoque { get; set; }
+        public Image Imagem { get; set; }
         public Foto Foto { get; set; }
         public IList<Produto> ListaDeProdutos()
         {

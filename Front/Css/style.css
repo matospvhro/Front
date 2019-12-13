@@ -4,10 +4,11 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
-body{
+
+body {
 	font-family: 'Arimo', sans-serif;
-  	background: #fff;
-	margin:0;
+	background: #fff;
+	margin: 0;
 }
 body a{
 	transition:0.5s all;
@@ -317,7 +318,7 @@ border:2px solid #fff;
 	left:0;
 }
 .product-grid {
-	width: 30%;
+	width: 20%;
 	margin: 0 3% 4% 0;
 	float: left;
 	border: 1.5px solid #eee;

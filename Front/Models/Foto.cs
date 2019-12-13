@@ -15,6 +15,6 @@ namespace Front.Models
         public int ID_CLIENTE { get; set; }
         public int ID_USUARIO { get; set; }
         public string ID_CODIGO_MOVIMENTACAO { get; set; }
-        public byte[] FOTOGRAFIA { get; set; }
+        public byte[] FOTOGRAFIA  { get; set; }
     }
 }
